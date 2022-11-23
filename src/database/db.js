@@ -12,4 +12,6 @@ try {
 }
 
 const db = mongoClient.db("recicleShop");
+
 export const users = db.collection("user");
+export const sessao = db.collection("sessao");
