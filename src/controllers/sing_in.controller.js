@@ -10,7 +10,7 @@ export async function sing_in(req, res) {
 
     const validation = loginSchema.validate(req.body, { abortEarly: false });
     if (validation.error) {
-        res.status(422).send(validation.error.message);
+        res.status(422).send("Digite corretamente seu login!!!");
         return
     }
     const token = v4();
