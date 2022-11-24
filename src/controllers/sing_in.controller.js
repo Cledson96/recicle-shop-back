@@ -5,12 +5,12 @@ import { v4 } from "uuid";
 import { sessao } from "../database/db.js"
 import dayjs from "dayjs";
 
-export async function login(req, res) {
+export async function sing_in(req, res) {
     const { email, password } = req.body;
 
     const validation = loginSchema.validate(req.body, { abortEarly: false });
     if (validation.error) {
-        res.status(422).send(validation.error.message);
+        res.status(422).send("Digite corretamente seu login!!!");
         return
     }
     const token = v4();
@@ -31,7 +31,7 @@ export async function login(req, res) {
         res.locals.usuario = sessaoativa;
 
         if (sessaoativa) {
-            console.log(sessaoativa)
+            
             return res.send({ token: sessaoativa.token, name: cadastrado.name });
 
         }
