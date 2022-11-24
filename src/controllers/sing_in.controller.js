@@ -31,7 +31,7 @@ export async function sing_in(req, res) {
         res.locals.usuario = sessaoativa;
 
         if (sessaoativa) {
-            console.log(sessaoativa)
+            
             return res.send({ token: sessaoativa.token, name: cadastrado.name });
 
         }
