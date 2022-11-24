@@ -5,7 +5,7 @@ import { v4 } from "uuid";
 import { sessao } from "../database/db.js"
 import dayjs from "dayjs";
 
-export async function login(req, res) {
+export async function sing_in(req, res) {
     const { email, password } = req.body;
 
     const validation = loginSchema.validate(req.body, { abortEarly: false });

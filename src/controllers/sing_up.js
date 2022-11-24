@@ -2,7 +2,7 @@ import { cadastroSchema } from "../models/cadastro.models.js";
 import bcrypt from "bcrypt";
 import { users } from "../database/db.js"
 
-export async function cadastro(req, res) {
+export async function sing_up(req, res) {
 
     const { name, email, password,endereco } = req.body;
 
