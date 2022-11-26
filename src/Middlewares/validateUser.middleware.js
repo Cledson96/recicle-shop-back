@@ -3,7 +3,7 @@ import { sessao, users } from "../database/db.js"
 
 export async function validateUser(req, res, next){
     
-    const token = req.headers.authorization.split(' ')[1]
+    const token = req.headers.authorization?.split(' ')[1]
 
     const sessionUser = await sessao.findOne({token})
 
