@@ -2,8 +2,8 @@ import { ObjectId } from "mongodb"
 import { sessao, users } from "../database/db.js"
 
 export async function validateUser(req, res, next){
-    const { authorization } = req.headers;
 
+    const { authorization } = req.headers;
     const token = authorization?.replace("Bearer ","");
     const sessionUser = await sessao.findOne({token})
 
