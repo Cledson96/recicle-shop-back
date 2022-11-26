@@ -6,7 +6,7 @@ export async function postRegistration(req, res) {
     const { product, img, description, price, category } = req.body;
     let user = res.locals.user
 
-let categorias = ["decoration","furniture","clothes","toys","eletronics"];
+const categorias = ["decoration","furniture","clothes","toys","eletronics"];
 
     const validation = registrationSchema.validate(req.body, { abortEarly: false });
     if (validation.error) {
