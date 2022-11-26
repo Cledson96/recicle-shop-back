@@ -21,6 +21,7 @@ export async function validateUser(req, res, next){
     }
 
     req.user = user
+    res.locals.user = user;
     
     next()
 }
