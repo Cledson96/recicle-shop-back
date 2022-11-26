@@ -7,6 +7,7 @@ export async function getProducts(req, res){
     
     const category = req.query.category
 
+    console.log(category)
     try {
 
         if(category){
