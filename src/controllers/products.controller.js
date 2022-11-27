@@ -43,7 +43,7 @@ export async function getOneProduct(req, res){
             return
         }
 
-        res.send(oneProduct).status(200)
+        res.status(200).send(oneProduct)
 
     } catch (error) {
         console.log(error)
