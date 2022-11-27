@@ -8,8 +8,25 @@ export async function getProducts(req, res){
     
     const category = req.query.category
 
+    const name = req.query.name
+
     console.log(category)
     try {
+
+        if(name){
+
+            try {
+                const listProductsName = await products.find({product: name}).toArray()
+    
+                res.send(listProductsName).status(200)
+
+                return
+            } catch (error) {
+
+                res.send({message:'Produto não encontrado!'}).status(404)
+                return
+            }
+        }
 
         if(category){
             const listProductsCategory= await products.find({category}).toArray()
