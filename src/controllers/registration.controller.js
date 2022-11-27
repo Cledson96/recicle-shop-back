@@ -5,10 +5,7 @@ export async function postRegistration(req, res) {
 
     const { product, img, description, price, category } = req.body;
     let user = res.locals.user
-    console.log(user)
-
-
-
+    
     const validation = registrationSchema.validate(req.body, { abortEarly: false });
     if (validation.error) {
         res.status(422).send(validation.error.message);
@@ -16,9 +13,10 @@ export async function postRegistration(req, res) {
     }
   
     try {
-        await products.insertOne({ product, img, description, price,category,id_usuario: user.id,email:user.email});
+        await products.insertOne({ product, img, description, price,category,id_usuario: user._id,email:user.email});
         res.status(201).send("produto cadastrado com sucesso!");
     } catch (err) {
+        console.log(user)
         res.status(500).send(err);
     }
 
