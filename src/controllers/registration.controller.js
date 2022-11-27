@@ -5,6 +5,7 @@ export async function postRegistration(req, res) {
 
     const { product, img, description, price, category } = req.body;
     let user = res.locals.user
+    console.log(user)
 
 
 
