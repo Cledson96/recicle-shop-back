@@ -5,6 +5,8 @@ import sing_in from "./routes/sing_in.route.js";
 import products from './routes/products.route.js'
 import registration from './routes/registration.route.js'
 import shopping_cart from './routes/shopping_cart.route.js'
+import getshopping_cart from './routes/getshopping_cart.route.js'
+
 
 
 const app = express();
@@ -16,6 +18,7 @@ app.use(sing_in);
 app.use(products);
 app.use(registration);
 app.use(shopping_cart);
+app.use(getshopping_cart);
 
 
 const port = process.env.PORT || 5000
