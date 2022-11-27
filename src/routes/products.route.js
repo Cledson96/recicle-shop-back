@@ -5,5 +5,7 @@ const router = Router()
 
 router.get('/products', getProducts )
 
+router.get('/products/:id')
+
 
 export default router
