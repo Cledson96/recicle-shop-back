@@ -1,3 +1,4 @@
+import { ObjectId } from "mongodb"
 import { products } from "../database/db.js"
 
 
@@ -21,6 +22,28 @@ export async function getProducts(req, res){
         const listProducts = await products.find().toArray()
         
         res.status(200).send(listProducts)
+
+    } catch (error) {
+        console.log(error)
+        res.sendStatus(500)
+    }
+}
+
+
+export async function getOneProduct(req, res){
+
+    const idProduct = req.params.id
+
+    try {
+        
+        const oneProduct = await products.findOne({_id: ObjectId(idProduct)})
+
+        if(!oneProduct){
+            res.status(404).send({message:'Produto não encontrado'})
+            return
+        }
+
+        res.send(oneProduct).status(200)
 
     } catch (error) {
         console.log(error)
