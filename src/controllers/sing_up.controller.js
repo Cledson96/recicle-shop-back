@@ -20,8 +20,9 @@ export async function sing_up(req, res) {
         res.status(409).send("Já existe um usuario com este email!")
         return
     }
-    await users.insertOne({ name, email, senha: passwordHash, endereco });
+    
     try {
+       const resp = await users.insertOne({ name, email, senha: passwordHash, endereco });
         res.status(201).send("usuario cadastrado com sucesso!");
     } catch (err) {
         res.status(500).send(err);
