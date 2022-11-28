@@ -17,4 +17,5 @@ export const users = db.collection("user");
 export const sessao = db.collection("sessao");
 export const products = db.collection("products");
 export const shopping_cart = db.collection("shopping_cart");
+export const sold = db.collection("send");
 
