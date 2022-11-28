@@ -11,7 +11,7 @@ export async function delete_cart(req, res) {
             res.status(404).send("produto não encontrado!")
             return
         }
-        await registro.deleteOne({ _id: ObjectId(id) });
+        await shopping_cart.deleteOne({ _id: ObjectId(id) });
         res.send("produto apagado com sucesso!");
     } catch (err) {
         console.log(err);
