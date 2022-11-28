@@ -6,9 +6,9 @@ export async function solds (req, res) {
 
     let user = res.locals.user
 
-    const registros = await shopping_cart.find({ email: user.email }).toArray();
+    let registros 
     try {
-
+        registros = await shopping_cart.find({ email: user.email }).toArray();
     } catch (err) {
         res.status(500).send(err);
     }
@@ -26,8 +26,9 @@ export async function solds (req, res) {
     }
 
    
-        await sold.insertOne(compra);
+        
     try {
+        const resp = await sold.insertOne(compra);
         res.status(201).send("produto vendido com sucesso!");
     } catch (err) {
         res.status(500).send(err);
