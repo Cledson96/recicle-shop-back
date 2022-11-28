@@ -15,7 +15,11 @@ export async function getProducts(req, res) {
         if (name) {
 
             try {
-                const listProductsName = await products.find({ product: name }).toArray()
+                
+                products.createIndex({ product: 'text' }, { default_language: 'pt' })
+
+                const listProductsName = await products.find({$text:{$search:name}}).toArray()
+
 
                 res.send(listProductsName).status(200)
 
