@@ -7,6 +7,7 @@ import registration from './routes/registration.route.js'
 import shopping_cart from './routes/shopping_cart.route.js'
 import getshopping_cart from './routes/getshopping_cart.route.js'
 import sold from './routes/sold.route.js'
+import delete_cart from './routes/delete_cart.route.js'
 
 
 
@@ -21,6 +22,7 @@ app.use(registration);
 app.use(shopping_cart);
 app.use(getshopping_cart);
 app.use(sold);
+app.use(delete_cart);
 
 
 const port = process.env.PORT || 5000
