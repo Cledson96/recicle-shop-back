@@ -32,12 +32,12 @@ export async function sing_in(req, res) {
 
         if (sessaoativa) {
             
-            return res.send({ token: sessaoativa.token, name: cadastrado.name });
+            return res.send({ token: sessaoativa.token, name: cadastrado.name, id: cadastrado._id });
 
         }
         sessao.insertOne({ token, id: cadastrado._id, email ,data:dayjs().format("DD/MM/YYYY")});
 
-        res.send({ token, name: cadastrado.name });
+        res.send({ token, name: cadastrado.name, id: cadastrado._id });
     } catch (err) {
         console.log(err);
         res.sendStatus(500);
