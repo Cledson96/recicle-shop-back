@@ -67,3 +67,12 @@ export async function getOneProduct(req, res){
         res.sendStatus(500)
     }
 }
+
+
+export async function deleteProduct(req, res){
+
+    let user = res.locals.user
+
+    console.log(user)
+    res.sendStatus(200)
+}
