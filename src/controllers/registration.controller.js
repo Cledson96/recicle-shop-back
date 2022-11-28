@@ -12,8 +12,9 @@ export async function postRegistration(req, res) {
         res.status(422).send(validation.error.message);
         return
     }
-    await products.insertOne({ product, img, description, price, category, id_usuario: user._id, email: user.email });
+    
     try {
+        const resp = await products.insertOne({ product, img, description, price, category, id_usuario: user._id, email: user.email });
         res.status(201).send("produto cadastrado com sucesso!");
     } catch (err) {
         res.status(500).send(err);

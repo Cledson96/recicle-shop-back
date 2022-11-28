@@ -11,11 +11,18 @@ export async function delete_cart(req, res) {
             res.status(404).send("produto não encontrado!")
             return
         }
-        await shopping_cart.deleteOne({ _id: ObjectId(id) });
-        res.send("produto apagado com sucesso!");
+        
     } catch (err) {
         console.log(err);
         res.sendStatus(404);
+    }
+
+    try {
+       const resp = await shopping_cart.deleteOne({ _id: ObjectId(id) });
+        res.send("produto apagado com sucesso!");
+    }catch (err) {
+        console.log(err);
+        res.sendStatus(500);
     }
 
 }
