@@ -7,7 +7,7 @@
 
 Projeto realizado como atividade no curso Developer fullstack Driven,colocando em pratica o aprendizado na biblioteca Node-js e junto com front-end desenvolvido em MongoDB e banco de dados.  
 No projeto temos uma lojinha, em que se pode cadastrar produtos e colocalos a venda, sendo produtos reciclados.Na aplicação tem a parte de cadastro e login, e o carrinho de compras para os itens selecionados pelo comprador.
-Foi utilizada para o front-end uma aplicação desenvolvida em dupla, estando neste repositório : `https://github.com/RaphaelBorba/recycle-shop-front.git`,nesta aplicação foi feita cpm React-js.
+Foi utilizada para o front-end uma aplicação desenvolvida em dupla, estando neste repositório : `https://github.com/RaphaelBorba/recycle-shop-front.git`,nesta aplicação foi feita com React-js.
 As tecnologias e bibliotecas utilizadas no back-end foram :    
 -bcrypt     
 -Axios    
